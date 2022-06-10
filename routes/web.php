@@ -14,7 +14,12 @@ use App\Http\Controllers\OfficialWordController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/store_official', [OfficialWordController::class, 'store']);
+
+// Create official Words
+Route::post('/add_official_word', [OfficialWordController::class, 'addOfficialWord']);
+
+// View all Official words
+Route::get('/all_official_words', [OfficialWordController::class, 'allOfficialWords']);
 
 // Login Route here
 Route::get('/', function () {

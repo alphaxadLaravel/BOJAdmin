@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('official_words', function (Blueprint $table) {
             $table->id();
+            $table->string('category');
             $table->string('title');
             $table->string('speaker');
             $table->string('pdf')->nullable();

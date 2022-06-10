@@ -18,7 +18,7 @@
         </a>
         <ul id="companies" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/official_word">
+            <a href="/all_official_words">
               <i class="bi bi-circle"></i><span>View All</span>
             </a>
           </li>

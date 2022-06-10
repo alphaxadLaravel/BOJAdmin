@@ -12,6 +12,7 @@ class OfficialWord extends Model
     protected $table = "official_words";
 
     protected $fillable = [
+        'category',
         'title',
         'speaker',
         'pdf',

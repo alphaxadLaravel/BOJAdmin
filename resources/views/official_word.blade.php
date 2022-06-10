@@ -12,14 +12,19 @@
 </div><!-- End Page Title -->
 
 <section class="section">
-  
+  @if (Session::has('uploaded'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  Official Word has been uploaded successfully!!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
   <div class="row">
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
            <h6 class="card-title">All Official  Words</h6>
-           <a href="add_official_word.html" class="btn rrs-btn btn-sm text-white " type="submit">Add New</a>
+           <a href="/add_official_word" class="btn rrs-btn btn-sm text-white " type="submit">Add New</a>
           </div>
 
           <div class="d-flex justify-content-between mb-3">
@@ -38,40 +43,55 @@
           </div>
 
           <!-- Companies table with stripped rows -->
-          <table class="table table-striped text-center">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th class="d-none d-md-table-cell">Speaker Name</th>
-                <th class="d-none d-md-table-cell">Category</th>
-                <th class="d-none d-md-table-cell">PDF</th>
-                <th class="d-none d-md-table-cell">Audio</th>
-                <th class="d-none d-md-table-cell">Video</th>
-                <th class="d-none d-md-table-cell">Update</th>
-                <th class="d-none d-md-table-cell">Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-             @for ($i = 0; $i < 10; $i++)
-              <tr>
-                <th scope="row">1</th>
-                <td>Hili neno nio official..</td>
-                <td class="d-none d-md-table-cell">Alphaxad Jozee</td>
-                <td class="d-none d-md-table-cell">Ubatizo</td>
-                <td class="d-none d-md-table-cell"><span class="text-success">Attached</span></td>
-                <td class="d-none d-md-table-cell"><span class="text-danger">Absent</span></td>
-                <td class="d-none d-md-table-cell"><span class="text-success">Attached</span></td>
-                <td class="d-none d-md-table-cell">
-                  <i class="bi bi-eye"></i>
-                </td>
-                <td class="d-none d-md-table-cell">
-                  <i class="bi bi-eye"></i>
-                </td>
-              </tr>
-             @endfor
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th class="">Speaker</th>
+                  <th class="">Category</th>
+                  <th class="">PDF</th>
+                  <th class="">Audio</th>
+                  <th class="">Video</th>
+                  <th class="">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($official as $word)
+                <tr>
+                  <td>{{$word->title}}</td>
+                  <td class="">{{$word->speaker}}</td>
+                  <td class="">{{$word->category}}</td>
+                  <td class="">
+                    @if ($word->pdf)
+                    <span class="text-success">Attached</span>
+                    @else 
+                    <span class="text-danger">Absent</span>
+                    @endif
+                  </td>
+                  <td class="">
+                    @if ($word->audio)
+                    <span class="text-success">Attached</span>
+                    @else 
+                    <span class="text-danger">Absent</span>
+                    @endif
+                  </td>
+                  <td class="">
+                    @if ($word->video)
+                    <span class="text-success">Attached</span>
+                    @else 
+                    <span class="text-danger">Absent</span>
+                    @endif
+                  </td>
+                 
+                  <td class=" text-danger">
+                    <i class="bi bi-trash"></i>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
 
         </div>
       </div>
