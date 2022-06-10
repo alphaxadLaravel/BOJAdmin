@@ -19,15 +19,6 @@ class OfficialWordController extends Controller
             'category' => 'required',
         ]);
 
-        OfficialWord::Create([
-            'pdf' => $pdf_path ?? "",
-            'audio' => $audio_path ?? "",
-            'video' => $video_path ?? "",
-            'speaker'=>request('speaker')?? "",
-            'title'=>request('title')?? "",
-            'category'=>request('category')?? "",
-        ]);
-
         if(request('pdf') == null && request('audio') == null && request('video') == null){
             OfficialWord::Create([
                 'speaker'=>request('speaker'),
