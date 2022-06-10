@@ -85,7 +85,7 @@
                   </td>
                  
                   <td class=" text-danger">
-                    <i class="bi bi-trash"></i>
+                    <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
                   </td>
                 </tr>
                 @endforeach

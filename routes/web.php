@@ -21,6 +21,9 @@ Route::post('/add_official_word', [OfficialWordController::class, 'addOfficialWo
 // View all Official words
 Route::get('/all_official_words', [OfficialWordController::class, 'allOfficialWords']);
 
+// Delete the official word here
+Route::get('/delete_official_word/{}', [OfficialWordController::class, 'deleteOfficialWord']);
+
 // Login Route here
 Route::get('/', function () {
     return view('index');

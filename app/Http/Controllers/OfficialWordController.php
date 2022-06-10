@@ -184,4 +184,13 @@ class OfficialWordController extends Controller
             'official'=>$official_words
         ]);
     }
+
+    public function deleteOfficialWord($id){
+        dd("am here");
+        $official = OfficialWord::destroy($id);
+
+        session()->flash('deleted', 'Data deleted successfulyy!!');
+
+        return redirect('/');
+    }
 }
