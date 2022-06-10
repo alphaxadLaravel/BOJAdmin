@@ -1,0 +1,2 @@
+key "bojadmin-48bfa-firebase-adminsdk-esaiu-3f16c51301.json"
+data "https://bojadmin-48bfa-default-rtdb.firebaseio.com/"
