@@ -37,16 +37,16 @@
                       <option value="uzinzi">Uzinzi</option>
                   </select>
               </div>
-              {{-- <div class="col-md-4">
+              <div class="col-md-4">
                 <label for="" class="form-label">Word Title <span class="text-danger">*</span></label>
                 <input type="text" name="name" class="form-control"  >
               </div>
               <div class="col-md-4">
                 <label for="" class="form-label">Speaker Name <span class="text-danger">*</span></label>
                 <input type="text" name="name" class="form-control"  >
-              </div> --}}
+              </div>
             </div>
-            {{-- <div class="row mt-1 mb-2">
+            <div class="row mt-1 mb-2">
               
               <div class="col-md-4">
                 <label for="" class="form-label">Attach PDF</label>
@@ -60,7 +60,7 @@
                 <label for="" class="form-label">Attach Video</label>
                 <input type="file" name="name" class="form-control"  >
               </div>
-            </div> --}}
+            </div>
             <div class="d-flex justify-content-end mt-4">
               <button type="submit" class="btn rrs-btn text-white " >Publish</button>
             </div>
